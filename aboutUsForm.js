@@ -50,4 +50,4 @@ function validateJoin() {
 
 }
 
-document.getElementById("joinForm").onsubmit= validateJoin;
+document.getElementById("joinForm").onsubmit= validateJoin();
