@@ -37,7 +37,7 @@ function validateJoin() {
     message=message+"The year of birth must be 2008 or earlier. \n";
     }
    }
-   if(email.value != "" && !email.value.match(/^\S+@\S+\.\S+$/)){
+      if(email.value != "" && !email.value.match(/^\S+@\S+\.\S+$/)){
     email.style.border="2px solid red";
     message=message+"Please enter a valid email address. \n";
     }
