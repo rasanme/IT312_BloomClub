@@ -46,7 +46,7 @@ function validateJoin() {
     return false;
    }
    alert("Thank you, " +name.value + "! Your request to join our team has been sent successfully ");
-   return true;
+   return false;
 
 }
 
