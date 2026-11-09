@@ -92,40 +92,40 @@
      <!-- Form Container -->
     <div class="Join_Form">
 
-        <form action="#" method="post">
+        <form id="joinForm" action="#" method="post" novalidate>
             <!-- Full Name -->
             <label>Full Name:
-                <input type="text" name="fullname" placeholder="Add Text" required >
+                <input type="text" id="fullname" name="fullname" placeholder="Add Text" required >
             </label>
 
             <!-- Profile Picture Upload -->
             <label>Add Profile Picture:
-                <input type="file" name="profilepicture" required>
+                <input type="file" id="profilepicture" name="profilepicture" accept="image/*" required>
             </label>
 
             <!-- Date of Birth -->
             <label>Date of Birth:
-                <input type="date" name="dateofbirth" required>
+                <input type="date" id="dateofbirth"name="dateofbirth" max="2008-12-31" required>
             </label>
 
            <!-- Email -->
             <label>Email:
-                <input type="email" name="email" placeholder="Add Email" required>
+                <input type="email" id="email" name="email" placeholder="Add Email" required>
             </label>
            
             <!-- Expertise -->
             <label>Area of Expertise:
-                <input type="text" name="expertise" placeholder="Add Text" required >
+                <input type="text" id="expertise" name="expertise" placeholder="Add Text" required >
             </label>
            
             <!-- Skills -->
             <label>Skills:
-                <input type="text" name="skills" placeholder="Add Text" required >
+                <input type="text" id="skills" name="skills" placeholder="Add Text" required >
             </label>
         
             <!-- Education -->
             <label>Education or Qualifications:
-                <input type="text" name="educationOrQualifications" placeholder="Add Text" required >
+                <input type="text" id="educationOrQualifications" name="educationOrQualifications" placeholder="Add Text" required >
             </label>           
             
             <!-- Submit Button -->
@@ -159,5 +159,6 @@
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
 
   </footer>
+  <script src="aboutUsForm.js"></script>
 </body>
 </html>
