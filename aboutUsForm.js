@@ -37,9 +37,9 @@ function validateJoin() {
     message=message+"The year of birth must be 2008 or earlier. \n";
     }
    }
-   if(email.value != "" && !email.value.match(/^\S+@\S+\.\S+$)){
+   if(email.value != "" && !email.value.match(/^\S+@\S+\.\S+$/)){
     email.style.border="2px solid red";
-    message=message+"The enter a valid email address. \n";
+    message=message+"Please enter a valid email address. \n";
     }
    if(message != ""){
     alert(message);
@@ -50,4 +50,4 @@ function validateJoin() {
 
 }
 
-document.getElementById(joinForm).onsubmit= validateJoin;
+document.getElementById("joinForm").onsubmit= validateJoin;
