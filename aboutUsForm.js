@@ -45,9 +45,35 @@ function validateJoin() {
     alert(message);
     return false;
    }
+   saveApplication(name.value, birth.value, email.value, expertise.value, skills.value, education.value);
    alert("Thank you, " +name.value + "! Your request to join our team has been sent successfully ");
+   document.getElementById("joinForm").reset();
    return false;
-
 }
 
+//read a listt from localStorage 
+function getList(key){
+   var list= JSON.parse(localStorage.getItem(key));
+   if(list == null)
+      list=[];
+   return list;
+}
+
+//add a card for every leader that manager approved
+function showLeaders(){
+   var approved = getList("approvedLeaders");
+   var html="";
+   for(var i = 0 ; i < approved.length ; i++){
+      html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"++ "<a href='leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
+         + "</div>";
+   }
+   document.getElementById(leaderList).innerHTML= document.getElementById("leaderList").innerHTML + html;
+}
+
+//show leader profile
+function openLeader(i){
+   var approved= getList("approvedLeaders");
+   localStorage.setItem("currentLeader",JSON.stringify(approved[i]));
+}
 document.getElementById("joinForm").onsubmit= validateJoin;
+showApprovedLeaders();
