@@ -7,7 +7,7 @@ var offerings = [
   { name: "Bouquet Styling", price: 0, image: "images/BStyling.png", alt: "Bouquet Styling session", description: "A relaxing open session to style a small bouquet, wrap it nicely and add a personal touch." }
 ];
 var favouritesColor= "rgb(204, 0, 75)";
-var soft= "#F2896A";
+var before= "rgb(126, 126, 126)";
 function showOfferings() {
   var html = "";
   for (var i = 0; i < offerings.length; i++) {
@@ -97,7 +97,7 @@ function toggleFavorite(button){
     if(button.style.color != favouritesColor){
         button.style.color= favouritesColor;
     } else {
-        button.style.color=soft;
+        button.style.color=before;
     }
 
 }
