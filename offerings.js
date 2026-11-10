@@ -7,6 +7,7 @@ var offerings = [
   { name: "Bouquet Styling", price: 0, image: "images/BStyling.png", alt: "Bouquet Styling session", description: "A relaxing open session to style a small bouquet, wrap it nicely and add a personal touch." }
 ];
 var favouritesColor= "rgb(204, 0, 75)";
+var soft= "#F2896A";
 function showOfferings() {
   var html = "";
   for (var i = 0; i < offerings.length; i++) {
@@ -20,7 +21,7 @@ function showOfferings() {
       + "<p>" + offerings[i].description + "</p>"
       + "<div class='off-bottom'>"
       + "<p class='off-price'>" + priceText + "</p>"
-      + "<button type='button' class='off-fav' onclick='toggleFavorite(this)' title='Add to favourites'>&#9825;</button>"
+      + "<button type='button' class='off-fav' onclick='toggleFavorite(this)' title='Add to favourites'>&#9829;</button>"
       + "</div>"
       + "</article>";
   }
@@ -94,11 +95,9 @@ function sortOfferings() {
 function toggleFavorite(button){
 
     if(button.style.color != favouritesColor){
-        button.innerHTML = "&#9829;";
         button.style.color= favouritesColor;
     } else {
-        button.innerHTML = "&#9825;";
-        button.style.color="";
+        button.style.color=soft;
     }
 
 }
