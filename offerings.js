@@ -6,7 +6,7 @@ var offerings = [
   { name: "Floral Perfume Preparation", price: 299, image: "images/perfume.png", alt: "Floral Perfume Preparation workshop", description: "Mix natural flower oils to create your own personal perfume and take your bottle home." },
   { name: "Bouquet Styling", price: 0, image: "images/BStyling.png", alt: "Bouquet Styling session", description: "A relaxing open session to style a small bouquet, wrap it nicely and add a personal touch." }
 ];
-
+var favouritesColor= "rgb(204, 0, 75)";
 function showOfferings() {
   var html = "";
   for (var i = 0; i < offerings.length; i++) {
@@ -20,7 +20,7 @@ function showOfferings() {
       + "<p>" + offerings[i].description + "</p>"
       + "<div class='off-bottom'>"
       + "<p class='off-price'>" + priceText + "</p>"
-      + "<button type='button' class='off-fav' title='Add to favourites'>&#9825;</button>"
+      + "<button type='button' class='off-fav' onclick='toggleFavorite(this)' title='Add to favourites'>&#9825;</button>"
       + "</div>"
       + "</article>";
   }
@@ -90,7 +90,18 @@ function sortOfferings() {
   }
   showOfferings();
 }
+ 
+function toggleFavorite(button){
 
+    if(button.style.color != favouritesColor){
+        button.innerHTML = "&#9829;";
+        button.style.color= favouritesColor;
+    } else {
+        button.innerHTML = "&#9825;";
+        button.style.color="";
+    }
+
+}
 shuffleOfferings();
 showOfferings();
 document.getElementById("sort").onchange = sortOfferings;
