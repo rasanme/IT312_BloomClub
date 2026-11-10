@@ -7,7 +7,7 @@ var offerings = [
   { name: "Bouquet Styling", price: 0, image: "images/BStyling.png", alt: "Bouquet Styling session", description: "A relaxing open session to style a small bouquet, wrap it nicely and add a personal touch." }
 ];
 var favouritesColor= "rgb(204, 0, 75)";
-var soft= "#F2896A";
+var soft= "rgb(242, 137, 106)";
 function showOfferings() {
   var html = "";
   for (var i = 0; i < offerings.length; i++) {
