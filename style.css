@@ -1261,11 +1261,11 @@ hr {
   background-color: transparent;
   border: none;
   font-size: 1.6rem;
-  color: var(--hot-gossip);
+  color: var(--soft-clay);
   cursor: pointer;
 }
 .off-fav:hover {
-  color: var(--soft-clay);
+  color: var(--hot-gossip);
 }
 /* Small screens */
 @media (max-width: 600px) {
