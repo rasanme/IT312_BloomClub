@@ -59,15 +59,20 @@ function getList(key){
    return list;
 }
 
+function saveApplication(name, birth, email, expertise, skills, education){
+   var pendeing= getList("pendingLeaders");
+   pendeing.push({name: name, birth: birth, email: email, expertise: expertise, skills: skills, education: education});
+   localStorage.setItem("pendingLeaders", JSON.stringify(pending));
+}
 //add a card for every leader that manager approved
 function showLeaders(){
    var approved = getList("approvedLeaders");
    var html="";
    for(var i = 0 ; i < approved.length ; i++){
-      html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"++ "<a href='leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
+      html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"+ "<a href='leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
          + "</div>";
    }
-   document.getElementById(leaderList).innerHTML= document.getElementById("leaderList").innerHTML + html;
+   document.getElementById("leaderList").innerHTML= document.getElementById("leaderList").innerHTML + html;
 }
 
 //show leader profile
@@ -76,4 +81,4 @@ function openLeader(i){
    localStorage.setItem("currentLeader",JSON.stringify(approved[i]));
 }
 document.getElementById("joinForm").onsubmit= validateJoin;
-showApprovedLeaders();
+showLeaders();
