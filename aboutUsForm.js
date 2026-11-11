@@ -61,7 +61,7 @@ function getList(key){
 
 function saveApplication(name, birth, email, expertise, skills, education){
    var pending= getList("pendingLeaders");
-   pendeing.push({name: name, birth: birth, email: email, expertise: expertise, skills: skills, education: education});
+   pending.push({name: name, birth: birth, email: email, expertise: expertise, skills: skills, education: education});
    localStorage.setItem("pendingLeaders", JSON.stringify(pending));
 }
 //add a card for every leader that manager approved
