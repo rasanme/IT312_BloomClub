@@ -60,7 +60,7 @@ function getList(key){
 }
 
 function saveApplication(name, birth, email, expertise, skills, education){
-   var pendeing= getList("pendingLeaders");
+   var pending= getList("pendingLeaders");
    pendeing.push({name: name, birth: birth, email: email, expertise: expertise, skills: skills, education: education});
    localStorage.setItem("pendingLeaders", JSON.stringify(pending));
 }
@@ -72,7 +72,7 @@ function showLeaders(){
       html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"+ "<a href='leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
          + "</div>";
    }
-   document.getElementById("leaderList").innerHTML= document.getElementById("leaderList").innerHTML + html;
+   document.getElementById("leadersList").innerHTML= document.getElementById("leaderList").innerHTML + html;
 }
 
 //show leader profile
