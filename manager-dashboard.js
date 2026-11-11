@@ -1,4 +1,4 @@
-function getList(getList){
+function getList(key){
     var list= JSON.parse(localStorage.getItem(key));
     if(list == null)
         list=[];
