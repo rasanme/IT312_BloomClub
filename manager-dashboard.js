@@ -6,7 +6,7 @@ function getList(key){
 }
 
 function showPendingLeaders(){
-    var pending = getList("pendeingLeaders");
+    var pending = getList("pendingLeaders");
     var html = "<tr><th> Name </th><th>Email</th><th>Aera of Expertise</th><th>Actions</th>";
 
     if(pending.length==0){
