@@ -1,4 +1,4 @@
-localStorage.clear();
+
 
 var leader =JSON.parse(localStorage.getItem("currentLeader"));
 
