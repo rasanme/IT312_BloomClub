@@ -48,7 +48,7 @@
     <section class="mgr-box">
         <h2>List of Current Instructors (select to delete)</h2>
 
-        <form action="#" method="post">
+        <form id="deleteForm" action="#" method="post">
             <!-- Each label holds a checkbox, a small image and a name -->
             <label class="mgr-member" for="del-rasan">
                 <input type="checkbox" id="del-rasan" name="delete" value="rasan">
@@ -82,7 +82,7 @@
     <section class="mgr-box">
         <h2>Add a New Instructor</h2>
 
-        <form action="#" method="post" enctype="multipart/form-data" class="mgr-form">
+        <form id="addLeaderForm" action="#" method="post" enctype="multipart/form-data" class="mgr-form">
 
             <label for="inst-name">Full Name:</label>
             <input type="text" id="inst-name" name="inst-name" placeholder="Add text" required>
@@ -143,6 +143,6 @@
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
 
 </footer>
-
+<script src="manage-team.js"></script>
 </body>
 </html>
