@@ -44,6 +44,9 @@ function addLeader(event){
  
     leaders.push({name: name.value});
 
+    var newLeader = "<label class='mgr-member'>" + "<input type='checkbox' name='delete' >"+ "<img src='images/profile.png' alt='Leader photo'>"+"<span>"+ name.value +"</span>"+"</label>";
+
+    document.getElementById("leadersContainer").innerHTML += newLeader;
     alert(name.value +" has been added successfully.");
 
     document.getElementById("addLeaderForm").reset();
