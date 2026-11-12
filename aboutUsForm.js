@@ -1,4 +1,4 @@
-localStorage.clear();
+
 
 function validateJoin() {
    var name= document.getElementById("fullname");
