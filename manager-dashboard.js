@@ -17,7 +17,7 @@ function showPendingLeaders(){
         html = html + "<tr>" + "<td>" + pending[i].name + "</td>"+
         "<td>" + pending[i].email + "</td>"+
         "<td>" + pending[i].expertise+ "</td>"+
-        "<td>" + "<button type='button' class='mgr-btn-approved' onclick='approveLeader("+i+")'>Approve</button>"+"<button type='button' class='mgr-btn-decline' onclick='declineLeader("+i+")'> Decline</button>"+ "</td>"+
+        "<td>" + "<button type='button' class='mgr-btn-approve' onclick='approveLeader("+i+")'>Approve</button>"+"<button type='button' class='mgr-btn-decline' onclick='declineLeader("+i+")'> Decline</button>"+ "</td>"+
         "</tr>";
     }   
 
@@ -33,8 +33,8 @@ function approveLeader(i){
 
     approved.push(leader);
     pending.splice(i,1);
-    localStorage.setItem("approvedLeaders".JSON.stringify(approved));
-    localStorage.setItem("pendingLeaders".JSON.stringify(pending));
+    localStorage.setItem("approvedLeaders",JSON.stringify(approved));   
+    localStorage.setItem("pendingLeaders",JSON.stringify(pending));
 
     alert(leader.name +"was approved and added to the Activity Leaders.");
     showPendingLeaders();
@@ -47,7 +47,7 @@ function declineLeader(i){
     var leader = pending[i];
 
     pending.splice(i,1);
-    localStorage.setItem("pendingLeaders".JSON.stringify(pending));
+    localStorage.setItem("pendingLeaders",JSON.stringify(pending));
 
     alert("The application of"+ leader.name+ "was declined.");
     showPendingLeaders();
