@@ -6,7 +6,58 @@
     <title>Bloom Gallery</title>
     <!-- Link the shared CSS file -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery {
+            background: var(--bg-color, #faf8f5);
+            color: var(--text-color, #333);
+            padding-bottom: 40px;
+        }
+        .intro {
+            text-align: center;
+            padding: 30px 15px;
+        }
+        .intro h1 {
+            color: var(--olive-stem, #5F7334);
+        }
+        .bouquets {
+            width: 85%;
+            max-width: 800px;
+            margin: auto;
+        }
+        .bouquet {
+            background: white;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px #00000010;
+        }
+        .bouquet img {
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            object-fit: contain;
+        }
+        .bouquet h2 {
+            color: var(--olive-stem, #5F7334);
+        }
 
+        .booking {
+            text-align: center;
+            padding: 30px 15px;
+        }
+        .booking a {
+            background: var(--olive-stem, #5F7334);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .booking a:hover {
+            background: #485927;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -20,173 +71,10 @@
   <!-- Navigation links -->
   <nav>
     <ul>
-      <li><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-
-    <!-- Linking external CSS file for page styling -->
-    <link rel="stylesheet" href="style.css"> 
-
-</head>
-<body>
-    <header>
-        <div class="header-top">
-            <div class="logo-container"><img src="images/bloomLogo.png" alt="Bloom Club">
-                <span >Bloom Club</span>
-            </div>
-        </div>
-        
-        <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="home.html">Home</a></li>
       <li><a href="offerings.html">Offerings</a></li>
       <li><a href="AboutUs_Page.html">About Us</a></li>
-      <li><a href="member-dashboard.html">Member Dashboard</a></li>
-      <li><a href="manager-dashboard.html">Manager Dashboard</a></li>
-    </ul>
-  </nav>
-    </header>
-
-    <!-- Breadcrumb Navigation -->
-    <div class="breadcrumb">      
-        <a href="index.html">HOME</a> ► About Us
-    </div>
-
-    <!--ABOUT US SECTION-->
-    <section id="aboutUs">
-
-        <div>
-            <h1>About Us</h1>
-            <p>Bloom Club is a small creative space for people who love flowers.
-            We offer simple, fun activities like bouquet arrangement and perfume preparation,
-            all designed to help members relax, learn, and enjoy their time.</p>
-        </div>
-
-        <!-- Vertical Divider -->
-        <hr class="vr">
-       
-        <div>
-            <h1>Our Mission</h1>
-            <p>Our mission is to spread creativity and joy through easy, relaxing workshops.
-            We want to help people reduce stress, learn new skills,
-            and connect with others in a positive environment.</p>
-        </div>
-
-    </section>
-
-    <hr>
-    
-    <!--LEADERS SECTION-->
-    <section class="leaders">
-        <h2>Activity Leaders & Instructors</h2>
-
-        <!-- Horizontal Scroll Cards -->
-        <div class="leaders-Scroll">
-
-            <!-- Leader Card -->
-            <div>
-                <img src="images/profile.png" alt="Rasan Profile Picture">
-                <a href="rasan.html">Rasan</a>
-            </div>
-            <div>
-                <img src="images/profile.png" alt="Sara Profile Picture">
-                <a href="sara.html">Sara</a>
-            </div>
-            <div>
-                <img src="images/profile.png" alt="Joud Profile Picture">
-                <a href="joud.html">Joud</a>
-            </div>
-            <div>
-                <img src="images/profile.png" alt="Ghada Profile Picture">
-                <a href="ghada.html">Ghada</a>
-            </div>
-        </div>
-    </section>
-
-    <hr >
-
-    <!--JOIN FORM-->
-    <h2 class="joinTitle">Join Our Team Form</h2>
-
-     <!-- Form Container -->
-    <div class="Join_Form">
-
-        <form action="#" method="post">
-            <!-- Full Name -->
-            <label>Full Name:
-                <input type="text" name="fullname" placeholder="Add Text" required >
-            </label>
-
-            <!-- Profile Picture Upload -->
-            <label>Add Profile Picture:
-                <input type="file" name="profilepicture" required>
-            </label>
-
-            <!-- Date of Birth -->
-            <label>Date of Birth:
-                <input type="date" name="dateofbirth" required>
-            </label>
-
-           <!-- Email -->
-            <label>Email:
-                <input type="email" name="email" placeholder="Add Email" required>
-            </label>
-           
-            <!-- Expertise -->
-            <label>Area of Expertise:
-                <input type="text" name="expertise" placeholder="Add Text" required >
-            </label>
-           
-            <!-- Skills -->
-            <label>Skills:
-                <input type="text" name="skills" placeholder="Add Text" required >
-            </label>
-        
-            <!-- Education -->
-            <label>Education or Qualifications:
-                <input type="text" name="educationOrQualifications" placeholder="Add Text" required >
-            </label>           
-            
-            <!-- Submit Button -->
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
-    <!--FOOTER-->
-    <footer>
-    <div class="footer-container">
-      <div class="footer-section" id="contact-us"><h3>Contact us</h3>
-        <hr >
-        <ul>
-            <li class="logo-icon" id="phone-icon"><a href="tel:+966552690204" target="_blank"><img src="images/phone.png" alt="" class="footer-icon">  Phone</a></li>
-            <li class="logo-icon" id="email-icon"><a href="mailto:BloomClub@gmail.com" target="_blank"><img src="images/email.png" alt="" class="footer-icon">  Email</a></li>
-            <li class="logo-icon" id="location-icon"><a href="https://maps.app.goo.gl/LZVPqwNEsbNbXUPS9?g_st=ic" target="_blank"><img src="images/location.png" alt="" class="footer-icon">  Location</a></li>
-        </ul>
-    </div>
-
-      <div class="footer-section" id="footer-logo" ><img src="images/bloomLogo.png" alt="Bloom Logo"></div>
-
-      <div class="footer-section" id="social-media"><h3>Social media</h3>
-         <hr >
-        <ul>
-            <li class="logo-icon" id="facebook-icon"><a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook Icon" class="footer-icon">  Facebook</a></li>
-            <li class="logo-icon" id="instagram-icon"><a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram Icon" class="footer-icon">  Instagram</a></li>
-            <li class="logo-icon" id="X-icon"><a href="https://x.com" target="_blank"><img src="images/X.png" alt="X Icon" class="footer-icon">  X</a></li>
-        </ul>
-    </div>
-    </div>
-    <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
-
-  </footer>
-</body>
-</html>
-</li>
-      <li><a href="offerings.html">Offerings</a></li>
-      <li><a href="AboutUs_Page.html">About Us</a></li>
-      <li><a href="member-dashboard.html">Member Dashboard</a></li>
+      <li><a href="member-dashoard.html">Member Dashboard</a></li>
       <li><a href="manager-dashboard.html">Manager Dashboard</a></li>
     </ul>
   </nav>
@@ -195,7 +83,7 @@
     <!-- Gallery content -->
     <main class="gallery">
         <!-- Breadcrumb shows the current page location -->
-        <div class="breadcrumb"><a href="home.html" >HOME</a> ► Gallery </div>
+        <div class="breadcrumb"><a href="home.html" >HOME</a>►Gallery </div>
 
         <!-- Introduction section -->
         <section class="intro">
@@ -249,9 +137,9 @@
       <div class="footer-section" id="social-media"><h3>Social media</h3>
          <hr >
         <ul>
-            <li class="logo-icon" id="facebook-icon"><a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook Icon" class="footer-icon">  Facebook</a></li>
-            <li class="logo-icon" id="instagram-icon"><a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram Icon" class="footer-icon">  Instagram</a></li>
-            <li class="logo-icon" id="X-icon"><a href="https://x.com" target="_blank"><img src="images/X.png" alt="X Icon" class="footer-icon">  X</a></li>
+            <li class="logo-icon" id="facebook-icon"><a href="#" target="_blank"><img src="images/facebook.png" alt="Facebook Icon" class="footer-icon">  Facebook</a></li>
+            <li class="logo-icon" id="instagram-icon"><a href="#" target="_blank"><img src="images/instagram.png" alt="Instagram Icon" class="footer-icon">  Instagram</a></li>
+            <li class="logo-icon" id="X-icon"><a href="#" target="_blank"><img src="images/X.png" alt="X Icon" class="footer-icon">  X</a></li>
         </ul>
     </div>
     </div>
