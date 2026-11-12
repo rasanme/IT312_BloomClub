@@ -72,7 +72,7 @@ function showLeaders(){
       html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"+ "<a href='leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
          + "</div>";
    }
-   document.getElementById("leadersList").innerHTML= document.getElementById("leaderList").innerHTML + html;
+document.getElementById("leadersList").innerHTML += html;
 }
 
 //show leader profile
