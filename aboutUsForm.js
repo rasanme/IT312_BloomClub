@@ -1,3 +1,5 @@
+localStorage.clear();
+
 function validateJoin() {
    var name= document.getElementById("fullname");
    var photo= document.getElementById("profilepicture");
