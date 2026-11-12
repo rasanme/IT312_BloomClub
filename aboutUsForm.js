@@ -1,5 +1,3 @@
-
-
 function validateJoin() {
    var name= document.getElementById("fullname");
    var photo= document.getElementById("profilepicture");
@@ -71,7 +69,7 @@ function showLeaders(){
    var approved = getList("approvedLeaders");
    var html="";
    for(var i = 0 ; i < approved.length ; i++){
-      html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"+ "<a href='leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
+      html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"+ "<a href='Leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
          + "</div>";
    }
 document.getElementById("leadersList").innerHTML += html;
