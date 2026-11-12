@@ -1,5 +1,3 @@
-
-
 var leader =JSON.parse(localStorage.getItem("currentLeader"));
 
 if(leader != null ){
