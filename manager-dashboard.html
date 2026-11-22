@@ -41,11 +41,11 @@
 
     <!-- Pending participation requests (sample content only) -->
     <section class="mgr-box">
-        <h2>Pending Participation Requests <span id="LeadersCounter" class="mgr-counter">4</span></h2>
+        <h2>Pending Participation Requests <span class="mgr-counter">4</span></h2>
 
         <!-- The div scrolls when the table is taller than the box -->
         <div class="mgr-table-scroll">
-            <table id="leadersTable" class="mgr-table">
+            <table class="mgr-table">
                 <tr>
                     <th>Member Name</th>
                     <th>Requested Offering</th>
@@ -92,12 +92,21 @@
         </div>
     </section>
 
+    <!-- Join Our Team applications (from the About Us page) -->
+    <section class="mgr-box">
+        <h2>Pending Team Applications <span id="LeadersCounter" class="mgr-counter">0</span></h2>
+
+        <div class="mgr-table-scroll">
+            <table id="leadersTable" class="mgr-table"></table>
+        </div>
+    </section>
+
     <!-- List of all offerings belonging to this manager -->
     <section class="mgr-box">
         <h2>Current Offerings for the Manager</h2>
 
         <div class="mgr-table-scroll">
-            <table class="mgr-table">
+            <table id="offeringsTable" class="mgr-table">
                 <tr>
                     <th>Offering Name</th>
                     <th>Price</th>
@@ -234,6 +243,7 @@
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
 
 </footer>
+<script src="home.js"></script>
 <script src="manager-dashboard.js"></script>
 </body>
 </html>

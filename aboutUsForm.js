@@ -31,7 +31,7 @@ function validateJoin() {
     message=message+"The photo must be an image(jpg,jpeg,png,gif,bmp,webp,svg). \n";
    }
    if(birth.value != ""){
-    var year=parseInt(birth.value);
+    var year = parseInt(birth.value.split("-")[0]);
     if(year> 2008 ){
     birth.style.border="2px solid red";
     message=message+"The year of birth must be 2008 or earlier. \n";
@@ -45,12 +45,29 @@ function validateJoin() {
     alert(message);
     return false;
    }
-   saveApplication(name.value, birth.value, email.value, expertise.value, skills.value, education.value);
-   alert("Thank you, " +name.value + "! Your request to join our team has been sent successfully ");
-   document.getElementById("joinForm").reset();
+   savePhotoApplication(photo.files[0], name.value, birth.value, email.value, expertise.value, skills.value, education.value);
    return false;
 }
+function savePhotoApplication(file, name, birth, email, expertise, skills, education){
+   var reader = new FileReader();
+   reader.onload = function(){
+      var x = new Image();
+      x.onload= function(){
+         var scale = Math.min(1, 400 / x.width);
+         var canvas = document.createElement("canvas");
+         canvas.width = x.width * scale;
+         canvas.height=x.height * scale;
+         canvas.getContext("2d").drawImage(x,0,0, canvas.width, canvas.height);
+         var photoData = canvas.toDataURL("image/jpeg", 0.8);
 
+         saveApplication(name, birth, email, expertise, skills, education, photoData);
+alert("Thank you, " + name + "! Your request to join our team has been sent successfully.");         document.getElementById("joinForm").reset();
+      
+      };
+      x.src = reader.result;
+   };
+   reader.readAsDataURL(file);
+}
 //read a listt from localStorage 
 function getList(key){
    var list= JSON.parse(localStorage.getItem(key));
@@ -59,9 +76,9 @@ function getList(key){
    return list;
 }
 
-function saveApplication(name, birth, email, expertise, skills, education){
+function saveApplication(name, birth, email, expertise, skills, education, photo){
    var pending= getList("pendingLeaders");
-   pending.push({name: name, birth: birth, email: email, expertise: expertise, skills: skills, education: education});
+   pending.push({name: name, birth: birth, email: email, expertise: expertise, skills: skills, education: education, photo: photo});
    localStorage.setItem("pendingLeaders", JSON.stringify(pending));
 }
 //add a card for every leader that manager approved
@@ -69,7 +86,10 @@ function showLeaders(){
    var approved = getList("approvedLeaders");
    var html="";
    for(var i = 0 ; i < approved.length ; i++){
-      html = html + "<div>"+ "<img src='images/profile.png' alt='" + approved[i].name + " Profile Picture'>"+ "<a href='Leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
+      var photo = approved[i].photo;
+      if(photo == null || photo == "")
+         photo = "images/profile.png";
+      html = html + "<div>"+ "<img src='" + photo + "' alt='"+ approved[i].name + " Profile Picture'>"+ "<a href='Leader.html' onclick='openLeader(" + i + ")'>" + approved[i].name + "</a>"
          + "</div>";
    }
 document.getElementById("leadersList").innerHTML += html;

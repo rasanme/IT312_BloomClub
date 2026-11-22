@@ -51,29 +51,7 @@
         <form id="deleteForm" action="#" method="post">
             <!-- Each label holds a checkbox, a small image and a name -->
              <div id="leadersContainer">
-            <label class="mgr-member" for="del-rasan">
-                <input type="checkbox" id="del-rasan" name="delete" value="rasan">
-                <img src="images/profile.png" alt="Rasan photo">
-                <span>Rasan</span>
-            </label>
-
-            <label class="mgr-member" for="del-sara">
-                <input type="checkbox" id="del-sara" name="delete" value="sara">
-                <img src="images/profile.png" alt="Sara photo">
-                <span>Sara</span>
-            </label>
-
-            <label class="mgr-member" for="del-joud">
-                <input type="checkbox" id="del-joud" name="delete" value="joud">
-                <img src="images/profile.png" alt="Joud photo">
-                <span>Joud</span>
-            </label>
-
-            <label class="mgr-member" for="del-ghada">
-                <input type="checkbox" id="del-ghada" name="delete" value="ghada">
-                <img src="images/profile.png" alt="Ghada photo">
-                <span>Ghada</span>
-            </label>
+                <!-- The instructors list is created by manage-team.js from an array of objects -->
             </div>
             <button type="submit" class="mgr-submit mgr-delete">Delete Selected Instructors</button>
         </form>
@@ -83,7 +61,7 @@
     <section class="mgr-box">
         <h2>Add a New Instructor</h2>
 
-        <form id="addLeaderForm" action="#" method="post" enctype="multipart/form-data" class="mgr-form">
+        <form id="addLeaderForm" action="#" method="post" enctype="multipart/form-data" class="mgr-form" novalidate>
 
             <label for="inst-name">Full Name:</label>
             <input type="text" id="inst-name" name="inst-name" placeholder="Add text" required>
@@ -144,6 +122,7 @@
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
 
 </footer>
+<script src="home.js"></script>
 <script src="manage-team.js"></script>
 </body>
 </html>

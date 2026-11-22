@@ -6,6 +6,9 @@ if(leader != null ){
     document.getElementById("leaderEmail").innerHTML = leader.email;
     document.getElementById("leaderExpertise").innerHTML = leader.expertise;
     document.getElementById("leaderEducation").innerHTML = leader.education;
+    if(leader.photo != null && leader.photo !=""){
+        document.getElementById("leaderPhoto").src = leader.photo;
+    }
 
     var skills = leader.skills.split(",");
     var html="";

@@ -43,9 +43,9 @@
     <!-- Page title -->
     <h1 class="mgr-title">Add New Offering</h1>
 
-    <!-- Add offering form (user interface only) -->
+    <!-- Add offering form (validated by add-offering.js) -->
     <section class="mgr-box">
-        <form action="#" method="post" enctype="multipart/form-data" class="mgr-form">
+        <form id="offerForm" action="#" method="post" enctype="multipart/form-data" class="mgr-form" novalidate>
 
             <label for="offer-name">Name of Offering:</label>
             <input type="text" id="offer-name" name="offer-name" placeholder="Add text" required>
@@ -97,6 +97,7 @@
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
 
 </footer>
-
+<script src="home.js"></script>
+<script src="add-offering.js"></script>
 </body>
 </html>

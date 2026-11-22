@@ -31,12 +31,7 @@
 </header>
 
         <!-- Breadcrumb navigation -->
-        <div class="breadcrumb">
-            <a href="index.html">HOME</a>
-            ►
-            <a href="member-dashboard.html">Member Dashboard</a>
-            ► Request to participate in an offering
-        </div> 
+        <div class="breadcrumb"> <a href="index.html">HOME</a> ► <a href="member-dashboard.html">Member Dashboard</a> ► Request to participate in an offering</div> 
 
     <!-- Main content of the page -->
     <main class="member-form-page">
@@ -56,14 +51,14 @@
                 <div class="form-group">
                     <label for="offering">Choose an Offer:</label>
 
-                    <select id="offering" name="offering" required>
+                    <select id="offering" name="offering">
                         <option value="" disabled selected> Choose from list </option>
-                        <option value="bridal-bouquet-design"> Bridal Bouquet Design </option>
-                        <option value="flower-arranging"> Flower Arranging 101  </option>
-                        <option value="botanical-photography"> Botanical Photography Workshop </option>
-                        <option value="indoor-plant-care"> Indoor Plant Care &amp; Propagation </option>
-                        <option value="floral-perfume"> Floral Perfume Preparation </option>
-                        <option value="bouquet-styling"> Bouquet Styling </option>
+                        <option value="Bridal Bouquet Design"> Bridal Bouquet Design </option>
+                        <option value="Flower Arranging 101"> Flower Arranging 101  </option>
+                        <option value="Botanical Photography Workshop"> Botanical Photography Workshop </option>
+                        <option value="Indoor Plant Care &amp; Propagation"> Indoor Plant Care &amp; Propagation </option>
+                        <option value="Floral Perfume Preparation"> Floral Perfume Preparation </option>
+                        <option value="Bouquet Styling"> Bouquet Styling </option>
                     </select>
                 </div>
 
@@ -71,17 +66,20 @@
                 <div class="form-group">
                     <label for="fullname">Member Full Name:</label>
 
-                    <input type="text" id="fullname" name="fullname" placeholder="Add Text" required > </div>
+                    <input type="text" id="fullname" name="fullname" placeholder="Add Text"> </div>
 
                 <!-- Choose the preferred date -->
                 <div class="form-group">
                     <label for="preferred-date">Preferred Date:</label>
-                    <input type="date" id="preferred-date" name="preferred-date" required ></div>
+                    <input type="date" id="preferred-date" name="preferred-date"></div>
 
                     <!-- Submit the request -->
-                    <button type="submit" class="member-form-button"> Submit Request </button>
+                    <button type="button" id="submitBtn" class="member-form-button"> Submit Request </button>
                 </form>
               </div>
+
+        <!-- Requests added during this visit (filled by request.js) -->
+        <div id="requestsBox" class="requests-box" style="display: none;"></div>
     </main>
 
     <!-- Website footer -->
@@ -116,6 +114,7 @@
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
 
   </footer>
-
+    <script src="home.js"></script>
+<script src="Request.js"></script>
 </body>
 </html>

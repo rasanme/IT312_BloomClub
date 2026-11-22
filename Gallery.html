@@ -6,59 +6,9 @@
     <title>Bloom Gallery</title>
     <!-- Link the shared CSS file -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .gallery {
-            background: var(--bg-color, #faf8f5);
-            color: var(--text-color, #333);
-            padding-bottom: 40px;
-        }
-        .intro {
-            text-align: center;
-            padding: 30px 15px;
-        }
-        .intro h1 {
-            color: var(--olive-stem, #5F7334);
-        }
-        .bouquets {
-            width: 85%;
-            max-width: 800px;
-            margin: auto;
-        }
-        .bouquet {
-            background: white;
-            padding: 20px;
-            margin-bottom: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 12px #00000010;
-        }
-        .bouquet img {
-            width: 100%;
-            max-width: 450px;
-            height: 300px;
-            object-fit: contain;
-        }
-        .bouquet h2 {
-            color: var(--olive-stem, #5F7334);
-        }
-
-        .booking {
-            text-align: center;
-            padding: 30px 15px;
-        }
-        .booking a {
-            background: var(--olive-stem, #5F7334);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 25px;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .booking a:hover {
-            background: #485927;
-        }
-    </style>
+    
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -74,8 +24,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="offerings.html">Offerings</a></li>
       <li><a href="AboutUs_Page.html">About Us</a></li>
-      <li><a href="member-dashoard.html">Member Dashboard</a></li>
-      <li><a href="manager-dashboard.html">Manager Dashboard</a></li>
+<li><a href="member-dashboard.html">Member Dashboard</a></li>      <li><a href="manager-dashboard.html">Manager Dashboard</a></li>
     </ul>
   </nav>
 </header>
@@ -116,7 +65,7 @@
 
         <!-- Button to book a ticket -->
         <div class="booking">
-            <a href="Gallery.html">Book the ticket</a>
+            <button type="button" id="bookBtn">Book the ticket</button>
         </div>
     </main>
     <!-- Footer -->
@@ -146,5 +95,7 @@
     <!-- Copyright information -->
     <div class="footer-bottom"><p>©️ 2026 Bloom Club</p></div>
   </footer>
+  <script src="home.js"></script>
+  <script src="gallery.js"></script>
 </body>
 </html>

@@ -447,7 +447,6 @@ footer {
   display: flex;
   align-items: stretch;
   gap: 30px;
-  color: var(--olive-stem);
 }
 /* About Us content columns */
 #aboutUs > div {
@@ -461,7 +460,6 @@ footer {
 }
 /* About Us paragraphs */
 #aboutUs p {
-  color: #000000;
   min-width: 0;
   font-size: 1rem;
 }
@@ -640,10 +638,12 @@ footer {
 }
 /* Instructor profile photo */
 .profileTable .profilephoto {
-  width: 150px;
+  width: 300px;
   height: 300px;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
   margin: 0 auto;
 }
 .profileTable td[rowspan] {
@@ -1315,15 +1315,16 @@ hr {
   text-align: center;
   padding: 30px 15px;
 }
-.booking a {
+.booking button {
   background: var(--olive-stem, #5F7334);
   color: white;
   padding: 12px 28px;
+  border: none;
   border-radius: 25px;
-  text-decoration: none;
-  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
 }
-.booking a:hover {
+.booking button:hover {
   background: #485927;
 }
 /* =========================================================
@@ -1341,7 +1342,7 @@ img {
   font-weight: bold;
 }
 .theme-button:hover {
-  background-color: #CC004B;
+  background-color: #CC004B !important;
 }
 .back-to-top {
   position: fixed;
@@ -1403,4 +1404,65 @@ img {
     right: 12px;
     padding: 8px 10px;
   }
+}
+
+/* Requests added during this visit (Request to Join page) */
+.requests-box {
+  max-width: 600px;
+  margin: 25px auto;
+  background-color: #ffffff;
+  border: 1px solid var(--bare-minimum);
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+.requests-box h2 {
+  color: var(--olive-stem);
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--soft-clay);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+.requests-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.requests-box th {
+  background-color: var(--bare-minimum);
+  padding: 10px;
+  text-align: left;
+}
+.requests-box td {
+  padding: 10px;
+  border-bottom: 1px solid var(--bare-minimum);
+}
+
+/* Previous requests table on phones: scroll instead of overflowing */
+@media (max-width: 600px) {
+  #tablePrevReq {
+    padding: 12px;
+    overflow-x: auto;
+  }
+  #tablePrevReq th, #tablePrevReq td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+  .requests-box {
+    padding: 12px;
+  }
+}
+
+/* Animation steps >the card starts hidden and small >then moves up and appears */
+@keyframes bouquetReveal {
+  from { opacity: 0; transform: translateY(100px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Apply the animation to each bouquet card */
+.bouquet {
+  animation: bouquetReveal linear both;   /* "both" keeps the final look after the animation */
+  animation-timeline: view();             /* the animation follows the page scroll, not time */
+  animation-range: entry 0% cover 50%;    /* starts when the card enters the screen, ends at 50% */
 }
