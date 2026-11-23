@@ -638,15 +638,25 @@ footer {
 }
 /* Instructor profile photo */
 .profileTable .profilephoto {
-  width: 300px;
-  height: 300px;
-  max-width: 100%;
+  width: 150px;
+  height: 230px;
   object-fit: cover;
   object-position: center top;
   display: block;
   margin: 0 auto;
 }
+
+@media (max-width: 600px) {
+  .profileTable .profilephoto {
+  width: 100px;
+  height: 130px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+}
 .profileTable td[rowspan] {
+   min-width: 80px;
   background-color: var(--bare-minimum);
   text-align: center;
 }
@@ -1465,4 +1475,9 @@ img {
   animation: bouquetReveal linear both;   /* "both" keeps the final look after the animation */
   animation-timeline: view();             /* the animation follows the page scroll, not time */
   animation-range: entry 0% cover 50%;    /* starts when the card enters the screen, ends at 50% */
+}
+
+.Join_Form input, .member-form-container input, .mgr-form input{
+  width: 100%;
+  box-sizing: border-box;
 }
