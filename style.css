@@ -1481,3 +1481,15 @@ img {
   width: 100%;
   box-sizing: border-box;
 }
+
+
+/* Extra functionality: hint text and hover effect for the clickable cards */
+.symbol-hint {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.symbolism-item:hover, .events-calendar td[tabindex]:hover {
+  outline: 2px solid #CC004B;
+}

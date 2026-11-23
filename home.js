@@ -101,3 +101,56 @@ if (document.getElementById("clock")) {
 
 checkScroll();
 window.onscroll = checkScroll;
+
+// ===== Extra functionality 1: Flower Language & Symbolism Guide =====
+// the meaning of each flower is hidden until the user clicks the card
+function toggleMeaning() {
+  var meaning = this.querySelector("p");
+  var hint = this.querySelector(".symbol-hint");
+
+  if (meaning.style.display == "none") {
+    meaning.style.display = "block";
+    hint.innerHTML = "Click to hide the meaning";
+  } else {
+    meaning.style.display = "none";
+    hint.innerHTML = "Click to reveal the meaning";
+  }
+}
+
+var flowers = document.querySelectorAll(".symbolism-item");
+for (var f = 0; f < flowers.length; f++) {
+  flowers[f].querySelector("p").style.display = "none";
+  flowers[f].innerHTML = flowers[f].innerHTML + "<small class='symbol-hint'>Click to reveal the meaning</small>";
+  flowers[f].style.cursor = "pointer";
+  flowers[f].setAttribute("tabindex", "0");
+  flowers[f].onclick = toggleMeaning;
+  flowers[f].onkeydown = function (event) {
+    if (event.key == "Enter")
+      toggleMeaning.call(this);
+  };
+}
+
+// ===== Extra functionality 2: Events Calendar =====
+// clicking a day that has an event asks the user to book it
+function bookEvent() {
+  var day = this.querySelector(".calendar-day").innerHTML;
+  var eventName = this.querySelector(".calendar-note").innerHTML;
+
+  if (confirm(eventName + " is on " + day + " November 2026.\n\nDo you want to request to join this event?")) {
+    window.location.href = "request-form.html";
+  }
+}
+
+var eventDays = document.querySelectorAll(".events-calendar td");
+for (var d = 0; d < eventDays.length; d++) {
+  if (eventDays[d].querySelector(".calendar-note") != null) {
+    eventDays[d].style.cursor = "pointer";
+    eventDays[d].title = "Click to join this event";
+    eventDays[d].setAttribute("tabindex", "0");
+    eventDays[d].onclick = bookEvent;
+    eventDays[d].onkeydown = function (event) {
+      if (event.key == "Enter")
+        bookEvent.call(this);
+    };
+  }
+}
