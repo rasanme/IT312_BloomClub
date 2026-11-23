@@ -80,9 +80,12 @@ function addLeader() {
     }
 
     // 4) date of birth must be in the past
-    if (dob.value != "" && new Date(dob.value) >= new Date()) {
+    if (dob.value != "") {
+        var year = parseInt(dob.value.split("-")[0]);
+        if(year > 2008){
         dob.style.border = "2px solid red";
         message = message + "- The date of birth must be in the past.\n";
+        }
     }
 
     // 5) email format
