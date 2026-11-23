@@ -1288,8 +1288,6 @@ hr {
 }
 /* Gallery page styles moved from Gallery.html */
 .gallery {
-  background: var(--bg-color, #faf8f5);
-  color: var(--text-color, #333);
   padding-bottom: 40px;
 }
 .intro {
