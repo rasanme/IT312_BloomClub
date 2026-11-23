@@ -79,12 +79,12 @@ function addLeader() {
         message = message + "- The profile picture must be an image (jpg, jpeg, png, gif, webp).\n";
     }
 
-    // 4) date of birth must be in the past
+    // 4) date of birth must be 2008 or earlier
     if (dob.value != "") {
         var year = parseInt(dob.value.split("-")[0]);
         if(year > 2008){
         dob.style.border = "2px solid red";
-        message = message + "- The date of birth must be in the past.\n";
+        message = message + "- The date of birth must be 2008 or earlier.\n";
         }
     }
 
