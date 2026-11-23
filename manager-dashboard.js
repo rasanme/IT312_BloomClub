@@ -82,6 +82,44 @@ function showManagerOfferings() {
 
     table.innerHTML = table.innerHTML + html;
 }
+var pendingRequests = [
+   {  member: "Lamar Thamer", offering: "Bridal Bouquet Design", date: "12/10/2026"  },
+     { member: "Fatima Zaid", offering: "Flower Arranging 101", date: "15/10/2026" },
+    { member: "Wed Abdulaziz", offering: "Botanical Photography Workshop", date: "20/10/2026" },
+    { member: "Alanoud Ibrahim", offering: "Floral Perfume Preparation", date: "25/10/2026" }
+];
 
+function showPendingRequests(){
+    var html ="<tr><th>Member Name</th><th>Requested Offering</th><th>Request Date</th><th>Actions</th></tr>";
+    if(pendingRequests.length == 0 )
+        html = html +"<tr><td colspan = '4'> No pending requests.</td></tr>";
+    for(var i = 0; i < pendingRequests.length; i++){
+        html = html + "<tr><td>" + pendingRequests[i].member + "</td>" +
+        "<td>" + pendingRequests[i].offering + "</td>" +
+        "<td>" + pendingRequests[i].date + "</td>" +
+        "<td>" + "<button type = 'button' class='mgr-btn-approve' onclick='approveRequest("+i+")'>Approve</button>" +
+        "<button type = 'button' class='mgr-btn-decline' onclick='declineRequest("+i+")'>Decline</button>" +   
+        "</td></tr>";    
+    }
+
+    document.getElementById("requestsTable").innerHTML=html;
+    document.getElementById("requestsCounter").innerHTML=pendingRequests.length;
+}
+
+function approveRequest(i){
+    var request = pendingRequests[i];
+    pendingRequests.splice(i, 1);
+    alert(request.member+"'s request to join "+ request.offering+" was approved");
+    showPendingRequests();
+}
+function declineRequest(i){
+    var request = pendingRequests[i];
+    if(confirm("Are you sure you want to to decline the request of "+request.member+" ?")){
+        pendingRequests.splice(i, 1); 
+        alert(request.member+"'s request to join "+ request.offering+" was declined");
+        showPendingRequests();
+    }
+}
+showPendingRequests();
 showPendingLeaders();
 showManagerOfferings();
