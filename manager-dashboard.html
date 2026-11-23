@@ -41,54 +41,11 @@
 
     <!-- Pending participation requests (sample content only) -->
     <section class="mgr-box">
-        <h2>Pending Participation Requests <span class="mgr-counter">4</span></h2>
+        <h2>Pending Participation Requests <span id="requestsCounter" class="mgr-counter">0</span></h2>
 
         <!-- The div scrolls when the table is taller than the box -->
         <div class="mgr-table-scroll">
-            <table class="mgr-table">
-                <tr>
-                    <th>Member Name</th>
-                    <th>Requested Offering</th>
-                    <th>Request Date</th>
-                    <th>Actions</th>
-                </tr>
-                <tr>
-                    <td>Lamar Thamer</td>
-                    <td>Bridal Bouquet Design</td>
-                    <td>12/10/2026</td>
-                    <td>
-                        <button type="button" class="mgr-btn-approve">Approve</button>
-                        <button type="button" class="mgr-btn-decline">Decline</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fatima Zaid </td>
-                    <td>Flower Arranging 101</td>
-                    <td>15/10/2026</td>
-                    <td>
-                        <button type="button" class="mgr-btn-approve">Approve</button>
-                        <button type="button" class="mgr-btn-decline">Decline</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Wed Abdulaziz</td>
-                    <td>Botanical Photography Workshop</td>
-                    <td>20/10/2026</td>
-                    <td>
-                        <button type="button" class="mgr-btn-approve">Approve</button>
-                        <button type="button" class="mgr-btn-decline">Decline</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Alanoud Ibrahim</td>
-                    <td>Floral Perfume Preparation</td>
-                    <td>25/10/2026</td>
-                    <td>
-                        <button type="button" class="mgr-btn-approve">Approve</button>
-                        <button type="button" class="mgr-btn-decline">Decline</button>
-                    </td>
-                </tr>
-            </table>
+            <table id="requestsTable" class="mgr-table"></table>
         </div>
     </section>
 
